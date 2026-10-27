@@ -9,26 +9,21 @@ void middle_finger()
 {
   if (!display.begin(SSD1306_SWITCHCAPVCC, 0x3C))
   {
+    // Try 0x3D if 0x3C doesn't work
     for (;;)
       ;
   }
 
   display.clearDisplay();
 
-  display.drawLine(0, 56, 127, 56, WHITE);
-  for (int x = 0; x < 128; x += 12)
-  {
-    display.drawCircle(x + 6, 60, 6, WHITE);
-  }
-
-  display.fillRect(35, 42, 50, 10, WHITE);
-  display.fillTriangle(85, 42, 85, 52, 100, 42, WHITE);
-  display.fillTriangle(35, 42, 35, 52, 25, 42, WHITE);
-  display.fillRect(58, 12, 3, 30, WHITE);
-  display.fillTriangle(63, 15, 63, 38, 90, 38, WHITE);
-  display.fillTriangle(56, 18, 56, 38, 38, 38, WHITE);
-  display.fillTriangle(58, 12, 58, 17, 50, 14, WHITE);
-
+  display.fillRoundRect(44, 32, 40, 22, 4, WHITE);
+  display.fillRoundRect(58, 6, 12, 28, 4, WHITE);
+  display.fillRoundRect(46, 22, 10, 12, 3, WHITE); // Index finger
+  display.fillRoundRect(72, 22, 10, 12, 3, WHITE); // Ring finger
+  display.fillRoundRect(82, 26, 6, 10, 2, WHITE);  // Pinky finger
+  display.fillRoundRect(36, 38, 10, 12, 4, WHITE);
+  display.setTextSize(1);
+  display.setTextColor(WHITE);
   display.display();
 }
 
@@ -46,7 +41,7 @@ void loop()
   digitalWrite(LED_BUILTIN, HIGH);
   middle_finger();
   display.setCursor(30, 56);
-  display.print("Ares puto x");
+  display.print("Hellow x");
   display.println(count);
   display.display();
 
