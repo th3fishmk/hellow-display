@@ -24,7 +24,7 @@ void middle_finger()
   display.fillRoundRect(36, 38, 10, 12, 4, WHITE);
   display.setTextSize(1);
   display.setTextColor(WHITE);
-  display.display();
+  // display.display();
 }
 
 void setup()
@@ -37,17 +37,15 @@ void setup()
 
 void loop()
 {
-  delay(1000);
+  delay(500);
   digitalWrite(LED_BUILTIN, HIGH);
   middle_finger();
   display.setCursor(30, 56);
   display.print("Hellow x");
   display.println(count);
   display.display();
-
   Serial.println("Hello from the loop");
-  Serial.println(count);
-  delay(1000);
-  digitalWrite(LED_BUILTIN, LOW);
   count++;
+  delay(500);
+  digitalWrite(LED_BUILTIN, LOW);
 }
