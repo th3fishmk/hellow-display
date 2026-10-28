@@ -70,14 +70,32 @@ void loop()
     delay(2000);
 
     drawEyes(54, 54, false, true);
-    delay(200);
+    delay(100);
 
     drawEyes(54, 54, true, false);
-    delay(200);
+    delay(100);
+
+    drawEyes(54, 54, true, true);
+    delay(1000);
+
+    drawEyes(30, 70, true, true);
+    delay(1000);
 
     drawEyes(54, 54, true, true);
     delay(2500);
 
-    drawEyes(30, 70, true, true);
+    drawEyes(54, 54, false, true);
+    delay(200);
+
+    drawEyes(54, 54, true, true);
     delay(2000);
+
+    drawEyes(70, 70, true, true);
+    delay(1000);
+
+    drawEyes(54, 54, true, true);
+    delay(2000);
+
+    drawEyes(70, 70, true, true);
+    delay(1000);
 }
